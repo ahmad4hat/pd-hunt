@@ -1,4 +1,29 @@
-{% extends 'base.html' %}
-{% block content %}
-login
-{% endblock content %} 
+{% extends 'base.html' %} {% block content %}
+
+{% if error%}
+{{error}}
+<br/>
+<br/>
+{%endif%}
+
+<h1>Login</h1>
+
+<form method="POST" action={% url 'login'%}>
+{%  csrf_token  %}
+  <div class="form-group">
+    <label for="usernameForm">Username:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="usernameForm"
+      aria-describedby="usernameHelp"
+      name="username"
+    />
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" name="password"/>
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+{% endblock content %}
