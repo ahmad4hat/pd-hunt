@@ -1,0 +1,75 @@
+{% extends 'base.html' %} {% block content %}
+
+{% if error%}
+{{error}}
+<br/>
+<br/>
+{%endif%}
+
+<h1>Create</h1>
+
+<form method="POST" action={% url 'create' %} enctype="multipart/form-data">
+{%  csrf_token  %}
+  <div class="form-group">
+    <label for="titleFrom">Title:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="titleFrom"
+      aria-describedby="titleHelp"
+      name="title"
+    />
+  </div>
+  
+  <div class="form-group">
+    <label for="bodyFrom">body:</label>
+    <textarea
+      type="text"
+      class="form-control"
+      id="bodyFrom"
+      aria-describedby="bodyHelp"
+      name="body"
+      height="300px"
+    ></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="urlFrom">Url:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="urlFrom"
+      aria-describedby="urlHelp"
+      name="url"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="iconFrom">Icon:</label>
+    <input
+      type="file"
+      class="form-control"
+      id="iconFrom"
+      aria-describedby="iconHelp"
+      name="icon"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="imageFrom">Image:</label>
+    <input
+      type="file"
+      class="form-control"
+      id="imageFrom"
+      aria-describedby="imageHelp"
+      name="image"
+    />
+  </div>
+  
+  
+
+
+
+  <button type="submit" class="btn btn-primary">Add Product</button>
+</form>
+{% endblock content %}
