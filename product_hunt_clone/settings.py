@@ -124,13 +124,17 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+# for static files 
 
 STATICFILES_DIRS = [
+    #static file directory
     os.path.join(BASE_DIR, 'product_hunt_clone/static/')
 ]
 
+#static file location
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+#media file location
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

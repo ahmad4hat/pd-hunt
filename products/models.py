@@ -12,6 +12,7 @@ class Product(models.Model):
     votes_total = models.IntegerField(default=1)
     image = models.ImageField(upload_to="images/")
     icon = models.ImageField(upload_to="images/")
+    # cascade will delete the product related with the user
     hunter = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):  # this chages the name what is seen from the admin panel

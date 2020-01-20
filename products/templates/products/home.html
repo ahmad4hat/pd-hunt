@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% block content %} {%for product in products.all%}
+{% extends 'base.html' %} {% block content %} 
+{%for product in products.all%}
 <div class="row m-1 p-2">
   <div class="col-2" onclick="window.location='{% url 'detail' product.id%}';" style="cursor:pointer ;">
     <img src="{{product.icon.url}}" alt="" class="img-fluid" />
@@ -26,4 +27,5 @@
   {%csrf_token%}
   <input type="hidden" />
 </form>
-{% endfor %} {% endblock content %}
+{% endfor %}
+{% endblock content %}
